@@ -128,6 +128,9 @@ public final class Utilities {
     public static final String EXTRA_WALLPAPER_OFFSET = "com.android.launcher3.WALLPAPER_OFFSET";
     public static final String EXTRA_WALLPAPER_FLAVOR = "com.android.launcher3.WALLPAPER_FLAVOR";
 
+    // DT2S
+    public static final String SLEEP_GESTURE = "pref_sleep_gesture";
+
     public static boolean IS_RUNNING_IN_TEST_HARNESS =
                     ActivityManager.isRunningInTestHarness();
 
@@ -621,5 +624,9 @@ public final class Utilities {
         public int getIntrinsicWidth() {
             return mSize;
         }
+    }
+
+    public static boolean useSleepGesture(Context context) {
+        return getPrefs(context).getBoolean(SLEEP_GESTURE, true);
     }
 }
